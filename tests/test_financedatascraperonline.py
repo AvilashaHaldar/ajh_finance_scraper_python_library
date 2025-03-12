@@ -1,4 +1,4 @@
-from financedatascraperonline import FinanceOnlineDataScraper, InterestRatesScrapedData
+from financedatascraperonline import HistoricalDailyStockPricesAPI, InterestRatesScrapedData
 import unittest
 import pandas as pd
 import numpy as np
@@ -6,7 +6,7 @@ import numpy as np
 class test_InterestRatesScrapedData(unittest.TestCase):
     def test_get_scraped_SOFR_curves(self):
         # Arrange
-        irsd = InterestRatesScrapedData()
+        irsd = InterestRatesScrapedData.InterestRatesScrapedData()
         # Act
         forward_SOFR_curves_df, allowed_SOFR_lengths_months = irsd.get_scraped_SOFR_curves()
         # Assert
@@ -17,7 +17,7 @@ class test_InterestRatesScrapedData(unittest.TestCase):
 
     def test_get_scraped_treasury_bill_rates(self):
         # Arrange
-        irsd = InterestRatesScrapedData()
+        irsd = InterestRatesScrapedData.InterestRatesScrapedData()
         # Act
         treasury_bill_rates_df = irsd.get_scraped_treasury_bill_rates()
         # Assert
@@ -25,10 +25,10 @@ class test_InterestRatesScrapedData(unittest.TestCase):
 
         # TODO: Check actual format of the dataframe
 
-class test_FinanceOnlineDataScraper(unittest.TestCase):
+class test_HistoricalDailyStockPricesAPI(unittest.TestCase):
     def test_get_historical_prices_df(self):
         # Arrange
-        fod = FinanceOnlineDataScraper()
+        fod = HistoricalDailyStockPricesAPI.HistoricalDailyStockPricesAPI()
         # Act
         aapl_df = fod.get_historical_prices_df("AAPL")
         # Assert
@@ -38,7 +38,7 @@ class test_FinanceOnlineDataScraper(unittest.TestCase):
 
     def test_get_main_stats_from_hist_prices(self):
         # Arrange
-        fod = FinanceOnlineDataScraper()
+        fod = HistoricalDailyStockPricesAPI.HistoricalDailyStockPricesAPI()
         # Act
         mu, sigma, latest_price = fod.get_main_stats_from_hist_prices("AAPL")
         # Assert
