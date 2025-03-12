@@ -1,8 +1,8 @@
 from setuptools import find_packages, setup
 
 setup(
-    name='ajh_finance_online_data_scraper',
-    packages=find_packages(include=['ajh_finance_online_data_scraper']),
+    name='financedatascraperonline',
+    packages=find_packages(include=['financedatascraperonline']),
     version='0.1.0',
     description='Library for scraping financial data from online sources',
     long_description=open('README.md').read(),

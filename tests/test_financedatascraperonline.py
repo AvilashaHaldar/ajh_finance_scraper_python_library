@@ -1,4 +1,4 @@
-from ajh_finance_online_data_scraper import FinanceOnlineDataScraper, InterestRatesScrapedData
+from financedatascraperonline import FinanceOnlineDataScraper, InterestRatesScrapedData
 import unittest
 import pandas as pd
 import numpy as np

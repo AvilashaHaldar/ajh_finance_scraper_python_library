@@ -5,7 +5,7 @@ Hello! This is a Python library for scraping various forms of public finance dat
 This can be done by doing:
 
 ```
-from ajh_finance_online_data_scraper import InterestRatesScrapedData
+from financedatascraperonline import InterestRatesScrapedData
 forward_SOFR_curves_df, allowed_SOFR_lengths_months = InterestRatesScrapedData().get_scraped_SOFR_curves()
 ```
 
@@ -14,7 +14,7 @@ forward_SOFR_curves_df is a Pandas DataFrame containing the 1-month and 3-month 
 2. Getting daily closing stock prices for the past 3 years
 
 ```
-from ajh_finance_online_data_scraper import HistoricalDailyStockPricesAPI
+from financedatascraperonline import HistoricalDailyStockPricesAPI
 closing_prices_df = HistoricalDailyStockPricesAPI().get_historical_prices_df(ticker_symbol)
 ```
 
@@ -23,7 +23,7 @@ closing_prices_df is a Pandas DataFrame of daily closing prices over the past 3 
 3. Compute a few key statistics from the past day
 
 ```
-from ajh_finance_online_data_scraper import HistoricalDailyStockPricesAPI
+from financedatascraperonline import HistoricalDailyStockPricesAPI
 mu, sigma, latest_price = HistoricalDailyStockPricesAPI().get_main_stats_from_hist_prices(ticker_symbol)
 ```
 
@@ -32,7 +32,7 @@ mu is the annualized mean daily log return of the last business day calculated f
 4. Scrape US treasury bill rates
 
 ```
-from ajh_finance_online_data_scraper import InterestRatesScrapedData
+from financedatascraperonline import InterestRatesScrapedData
 treasury_bill_rates_df = InterestRatesScrapedData().get_scraped_treasury_bill_rates()
 ```
 
